@@ -23,7 +23,9 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => LogService(), fenix: true);
 
     // ── Controllers ──────────────────────────────────────────────
-    Get.put(ThemeController());
+    Get.put(
+      ThemeController(),
+    ); // Put instead of lazyPut since we need theme immediately
     Get.lazyPut(() => ChatController(), fenix: true);
     Get.lazyPut(() => ModelController(), fenix: true);
   }

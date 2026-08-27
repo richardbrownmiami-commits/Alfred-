@@ -6,8 +6,8 @@ class AiModelInfo {
   final String url;
   final double sizeGb;
   final int minRamGb;
-  final String label;
-  final String badge;
+  final String label;        // UNCENSORED / STANDARD / CUSTOM
+  final String badge;        // RECOMMENDED, HERETIC, etc.
   final String systemPrompt;
   final bool recommended;
 
@@ -40,10 +40,17 @@ class AiModelInfo {
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': name, 'filename': filename, 'url': url,
-    'sizeGb': sizeGb, 'minRamGb': minRamGb, 'label': label,
-    'badge': badge, 'systemPrompt': systemPrompt, 'recommended': recommended,
-  };
+        'id': id,
+        'name': name,
+        'filename': filename,
+        'url': url,
+        'sizeGb': sizeGb,
+        'minRamGb': minRamGb,
+        'label': label,
+        'badge': badge,
+        'systemPrompt': systemPrompt,
+        'recommended': recommended,
+      };
 
   bool get isUncensored => label == 'UNCENSORED';
   bool get isStandard => label == 'STANDARD';
